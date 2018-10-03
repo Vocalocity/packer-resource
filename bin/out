@@ -46,6 +46,8 @@ jq '.params|del(.template,.var_file) // empty' /tmp/input > /tmp/vars.json
 
 cd $(dirname $SRC/$TEMPLATE)
 
+packer version
+
 packer validate $ARGS -var-file=/tmp/vars.json $SRC/$TEMPLATE
 
 echo
